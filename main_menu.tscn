@@ -1,0 +1,412 @@
+[gd_scene load_steps=24 format=3 uid="uid://ignaffxito"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_r3sd6"]
+[ext_resource type="FontFile" uid="uid://c0cldb08e1on4" path="res://asset/FONT/zombiecontrolital.ttf" id="2_65b1x"]
+
+[sub_resource type="FontVariation" id="FontVariation_a5qxl"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_ys65a"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_qv38w"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_1nlso"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_wkhax"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_b660b"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_7ffw2"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_1pnpt"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_2uvq4"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_4663l"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_8c4gm"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_dj4nx"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_ivd4a"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_xum7h"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_wounb"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_i1hx8"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="Theme" id="Theme_0ugxk"]
+
+[sub_resource type="FontVariation" id="FontVariation_cde2x"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_iek5m"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_3exu1"]
+base_font = ExtResource("2_65b1x")
+
+[sub_resource type="FontVariation" id="FontVariation_gm3a5"]
+base_font = ExtResource("2_65b1x")
+
+[node name="MainMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r3sd6")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 524.0
+offset_top = 236.0
+offset_right = 594.0
+offset_bottom = 337.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="Menu"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_a5qxl")
+theme_override_font_sizes/font_size = 45
+text = "Start"
+flat = true
+
+[node name="Resume" type="Button" parent="Menu"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ys65a")
+theme_override_font_sizes/font_size = 45
+text = "Resume"
+flat = true
+
+[node name="Option" type="Button" parent="Menu"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_qv38w")
+theme_override_font_sizes/font_size = 45
+text = "Options"
+flat = true
+
+[node name="Save" type="Button" parent="Menu"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_1nlso")
+theme_override_font_sizes/font_size = 45
+text = "Save"
+flat = true
+
+[node name="Load" type="Button" parent="Menu"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_wkhax")
+theme_override_font_sizes/font_size = 45
+text = "Load"
+flat = true
+
+[node name="Exit" type="Button" parent="Menu"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_b660b")
+theme_override_font_sizes/font_size = 45
+text = "Exit"
+flat = true
+
+[node name="Options" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 564.0
+offset_top = 292.0
+offset_right = 564.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -33.0
+offset_right = 65.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Video" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_7ffw2")
+theme_override_font_sizes/font_size = 45
+text = "Video"
+flat = true
+
+[node name="Audio" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_1pnpt")
+theme_override_font_sizes/font_size = 45
+text = "Audio
+"
+flat = true
+
+[node name="BackFromOptions" type="Button" parent="Options"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = 196.0
+offset_right = 55.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = SubResource("FontVariation_2uvq4")
+theme_override_font_sizes/font_size = 45
+text = "Back"
+flat = true
+
+[node name="Video" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Video"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 192.0
+offset_right = 832.0
+offset_bottom = 416.0
+
+[node name="Labels" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="FullScreen" type="Label" parent="Video/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_4663l")
+theme_override_font_sizes/font_size = 45
+text = "FullScreen"
+
+[node name="Borderless" type="Label" parent="Video/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_8c4gm")
+theme_override_font_sizes/font_size = 45
+text = "Borderless"
+
+[node name="Vsync" type="Label" parent="Video/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_dj4nx")
+theme_override_font_sizes/font_size = 45
+text = "VSync"
+
+[node name="Checks" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FullScreen" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ivd4a")
+theme_override_font_sizes/font_size = 45
+
+[node name="Borderless" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_xum7h")
+theme_override_font_sizes/font_size = 45
+
+[node name="VSync" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_wounb")
+theme_override_font_sizes/font_size = 45
+
+[node name="BackFromVideo" type="Button" parent="Video"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 488.0
+offset_right = 637.0
+offset_bottom = 565.0
+theme_override_fonts/font = SubResource("FontVariation_i1hx8")
+theme_override_font_sizes/font_size = 45
+text = "Back"
+flat = true
+
+[node name="Video2" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Video2"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 288.0
+offset_right = 448.0
+offset_bottom = 512.0
+
+[node name="Labels" type="VBoxContainer" parent="Video2/HBoxContainer"]
+layout_mode = 2
+
+[node name="FullScreen" type="Label" parent="Video2/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "FullScreen"
+
+[node name="Borderless" type="Label" parent="Video2/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Borderless"
+
+[node name="Vsync" type="Label" parent="Video2/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "VSync"
+
+[node name="Checks" type="VBoxContainer" parent="Video2/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FullScreen" type="CheckBox" parent="Video2/HBoxContainer/Checks"]
+layout_mode = 2
+size_flags_vertical = 15
+size_flags_stretch_ratio = 5.73
+theme = SubResource("Theme_0ugxk")
+
+[node name="Borderless" type="CheckBox" parent="Video2/HBoxContainer/Checks"]
+layout_mode = 2
+
+[node name="VSync" type="CheckBox" parent="Video2/HBoxContainer/Checks"]
+layout_mode = 2
+
+[node name="BackFromVideo" type="Button" parent="Video2"]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 444.0
+offset_right = 382.0
+offset_bottom = 475.0
+text = "Back"
+
+[node name="Audio" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1144.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = -66.0
+offset_right = 115.5
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Labels" type="VBoxContainer" parent="Audio/HBoxContainer"]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="Audio/HBoxContainer/Labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = SubResource("FontVariation_cde2x")
+theme_override_font_sizes/font_size = 45
+text = "Master"
+
+[node name="Music" type="Label" parent="Audio/HBoxContainer/Labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = SubResource("FontVariation_iek5m")
+theme_override_font_sizes/font_size = 45
+text = "Music"
+
+[node name="SoundFX" type="Label" parent="Audio/HBoxContainer/Labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = SubResource("FontVariation_3exu1")
+theme_override_font_sizes/font_size = 45
+text = "SoundFX"
+
+[node name="Slider" type="VBoxContainer" parent="Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Music" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SoundFX" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackFromAudio" type="Button" parent="Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = 203.0
+offset_right = 17.5
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_gm3a5")
+theme_override_font_sizes/font_size = 45
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Options/BackFromOptions" to="." method="_on_back_from_options_pressed"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/VSync" to="." method="_on_v_sync_toggled"]
+[connection signal="pressed" from="Video/BackFromVideo" to="." method="_on_back_from_video_pressed"]
+[connection signal="toggled" from="Video2/HBoxContainer/Checks/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="toggled" from="Video2/HBoxContainer/Checks/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="Video2/HBoxContainer/Checks/VSync" to="." method="_on_v_sync_toggled"]
+[connection signal="pressed" from="Video2/BackFromVideo" to="." method="_on_back_from_video_pressed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/SoundFX" to="." method="_on_sound_fx_value_changed"]
+[connection signal="pressed" from="Audio/BackFromAudio" to="." method="_on_back_from_audio_pressed"]

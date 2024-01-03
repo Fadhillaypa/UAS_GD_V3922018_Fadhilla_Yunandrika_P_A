@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://syu34cvbsd6y"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_5dkbq"]
+[ext_resource type="Texture2D" uid="uid://dcyrhy8jdj58e" path="res://asset/Picsart_23-10-26_22-53-01-809.png" id="1_pmkey"]
+[ext_resource type="AudioStream" uid="uid://x65jldk7v724" path="res://asset/pocong nyolot.mp3" id="2_7kow8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kger3"]
+atlas = ExtResource("1_pmkey")
+region = Rect2(0, 0, 942, 2828)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ir8h"]
+atlas = ExtResource("1_pmkey")
+region = Rect2(942, 0, 942, 2828)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4715h"]
+atlas = ExtResource("1_pmkey")
+region = Rect2(1884, 0, 942, 2828)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l3qkf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kger3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ir8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4715h")
+}],
+"loop": true,
+"name": &"pocong",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70k3k"]
+size = Vector2(881.315, 2771.47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xx633"]
+size = Vector2(40.25, 13.4688)
+
+[node name="pocong" type="CharacterBody2D"]
+script = ExtResource("1_5dkbq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(748.469, 225.031)
+scale = Vector2(0.0499601, 0.0431179)
+sprite_frames = SubResource("SpriteFrames_l3qkf")
+animation = &"pocong"
+frame = 1
+frame_progress = 0.16451
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(-9.3877, -29.7095)
+shape = SubResource("RectangleShape2D_70k3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(758, 291)
+shape = SubResource("RectangleShape2D_xx633")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7kow8")
+volume_db = -7.586
+autoplay = true

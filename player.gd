@@ -1,0 +1,63 @@
+extends CharacterBody2D
+
+@export var ACCELERATION = 500
+@export var MAX_SPEED = 200
+@export var FRICTION  = 500
+@onready var main = $".."
+
+var coins = 0
+
+const SPEED = 400.0
+const JUMP_VELOCITY = -800.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+
+
+func _physics_process(delta):
+	move(delta)
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Handle Jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis("ui_left", "ui_right")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if position.y > 900:
+		get_tree().change_scene_to_file("res://gameover.tscn")
+		
+func move(delta):
+	var input_vector = Vector2.ZERO
+	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vector = input_vector.normalized()
+	
+	if input_vector != Vector2.ZERO:
+		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+		main.addscore()
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+	
+
+	move_and_slide()
+
+	if Input.is_action_just_pressed("ui_right"):
+		$AnimatedSprite2D.play("Kanan")
+		
+	if Input.is_action_just_pressed("ui_up"):
+		$AnimatedSprite2D.play("Lompat")
+		
+	if Input.is_action_just_pressed("ui_left"):
+		$AnimatedSprite2D.play("Kiri")
+	
+func GetCoin():
+	coins += 1

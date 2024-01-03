@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqb4uixf5roxk"]
+
+[ext_resource type="Script" path="res://gameover.gd" id="1_mjeow"]
+[ext_resource type="FontFile" uid="uid://c0cldb08e1on4" path="res://asset/FONT/zombiecontrolital.ttf" id="1_qywt3"]
+[ext_resource type="Texture2D" uid="uid://bdlwx72sfnt6w" path="res://asset/New folder/gameover.jpg" id="2_eajkc"]
+
+[sub_resource type="FontVariation" id="FontVariation_33bh8"]
+base_font = ExtResource("1_qywt3")
+
+[sub_resource type="FontVariation" id="FontVariation_myo4f"]
+base_font = ExtResource("1_qywt3")
+
+[sub_resource type="FontVariation" id="FontVariation_yxtn1"]
+base_font = ExtResource("1_qywt3")
+
+[sub_resource type="FontVariation" id="FontVariation_13ra7"]
+base_font = ExtResource("1_qywt3")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mjeow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(573, 324)
+scale = Vector2(0.794224, 0.794224)
+texture = ExtResource("2_eajkc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 264.0
+offset_right = 649.0
+offset_bottom = 370.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_33bh8")
+theme_override_font_sizes/font_size = 40
+text = "New Game"
+flat = true
+
+[node name="Exit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_myo4f")
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+flat = true
+
+[node name="Gameover" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 98.0
+offset_right = 761.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0.682353, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_yxtn1")
+theme_override_font_sizes/font_size = 80
+text = "GAME OVER"
+
+[node name="HighScore" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 465.0
+offset_right = 692.0
+offset_bottom = 516.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_13ra7")
+theme_override_font_sizes/font_size = 45
+text = "Your Score : 0"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

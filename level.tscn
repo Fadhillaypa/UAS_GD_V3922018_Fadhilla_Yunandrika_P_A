@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://dm51gklbxo3ng"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_jaivl"]
+[ext_resource type="Texture2D" uid="uid://ubv8mhf1g1ka" path="res://asset/LEVEL.png" id="1_p3glo"]
+[ext_resource type="FontFile" uid="uid://c0cldb08e1on4" path="res://asset/FONT/zombiecontrolital.ttf" id="3_0xu6n"]
+
+[sub_resource type="FontVariation" id="FontVariation_dqsfn"]
+base_font = ExtResource("3_0xu6n")
+
+[sub_resource type="FontVariation" id="FontVariation_jt3bq"]
+base_font = ExtResource("3_0xu6n")
+
+[sub_resource type="FontVariation" id="FontVariation_3onbq"]
+base_font = ExtResource("3_0xu6n")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jaivl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(575, 326)
+scale = Vector2(0.609259, 0.609259)
+texture = ExtResource("1_p3glo")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 231.0
+offset_top = 313.0
+offset_right = 260.0
+offset_bottom = 372.0
+theme_override_colors/font_color = Color(0.578125, 0.101563, 0.125, 1)
+theme_override_fonts/font = SubResource("FontVariation_dqsfn")
+theme_override_font_sizes/font_size = 43
+text = "1"
+flat = true
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 569.0
+offset_top = 436.0
+offset_right = 598.0
+offset_bottom = 495.0
+theme_override_colors/font_color = Color(0.578125, 0.101563, 0.125, 1)
+theme_override_fonts/font = SubResource("FontVariation_jt3bq")
+theme_override_font_sizes/font_size = 43
+text = "2"
+flat = true
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+offset_left = 855.0
+offset_top = 284.0
+offset_right = 884.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.578125, 0.101563, 0.125, 1)
+theme_override_fonts/font = SubResource("FontVariation_3onbq")
+theme_override_font_sizes/font_size = 43
+text = "3"
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
